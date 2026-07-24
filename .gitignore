@@ -1,0 +1,70 @@
+# ============================================================================
+# STAFT .gitignore
+# ============================================================================
+
+# --- Raw agent traces (privacy-sensitive L0 input; regenerated via OS-HARM) --
+# These are intentionally NOT committed. STAFT's whole point is that the raw
+# trace is the sensitive artifact; only the abstracted L2 traces and the
+# result reports under results/ are released. See README §"Regenerating raw
+# traces". The forensic pipeline reads these from results/osharm_*_L0/.
+results/osharm_ipi_L0/
+results/osharm_misuse_L0/
+results/osharm_misbehavior_L0/
+
+# Heavy E7 VM re-execution outputs (recordings / screenshots), if regenerated
+results/e7_validation/runs/
+results/e7_validation/noise_floor/
+results/e7_validation/noise_floor_complex_case_*/
+
+# --- Author-identifying submission PDF (excluded for anonymized release) ----
+# Figure PDFs under results/ and scripts/ are kept; only the manuscript is not.
+_DFRWS_APAC_2026__Minseok.pdf
+*_Minseok.pdf
+
+# --- Secrets / credentials --------------------------------------------------
+.env
+api_key.py
+evaluation_examples/settings/google/settings.json
+evaluation_examples/settings/googledrive/credentials.json
+evaluation_examples/settings/googledrive/client_secrets.json
+
+# --- VM data ----------------------------------------------------------------
+vmware_vm_data/
+docker_vm_data/
+.vms
+.vmware*
+/vm_data
+
+# --- Paper / working files --------------------------------------------------
+camera-ready/
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# --- Envs / tooling ---------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# --- Runtime cruft ----------------------------------------------------------
+cache/
+logs/
+*.log
+.DS_Store
+tmp.*

@@ -1,0 +1,67 @@
+# ============================================================================
+# STAFT requirements
+# ----------------------------------------------------------------------------
+# Two groups of dependencies:
+#   (A) STAFT forensic analysis  — abstraction (L0/L1/L2), attribution
+#       (B1/B2/LOO-LLM), and privacy metrics (M1/M2/M3). This is the core
+#       contribution and the only group needed to reproduce the result
+#       artifacts in results/ from the released L2 traces.
+#   (B) OS-HARM trace collection — the OSWorld/OS-HARM agent runtime used to
+#       (re)generate the raw L0 traces. Only needed if you regenerate traces
+#       from scratch inside a VM (see README §"Regenerating raw traces").
+# Python >= 3.12 is required.
+# ============================================================================
+
+# --- (A) STAFT forensic analysis --------------------------------------------
+presidio-analyzer        # L1: PII detection (11 entity types)
+presidio-anonymizer      # L1: PII span replacement
+spacy                    # Presidio NER backend (needs en_core_web_lg, see README)
+sentence-transformers    # M3: sentence-BERT cosine similarity
+nltk                     # M2: BLEU-2 surface-overlap metric
+scipy                    # bootstrap CIs / correlation stats
+tiktoken>=0.9.0          # token-retention / compression accounting
+openai>=1.97.1           # L2 tagger (GPT-4o-mini) + LOO-LLM probe (judge)
+anthropic>=0.59.0        # M3 adversary model (Claude Haiku 4.5)
+numpy>=1.26.4
+matplotlib~=3.7.4        # Pareto / scatter figures
+
+# --- (B) OS-HARM trace collection (OSWorld runtime) -------------------------
+gymnasium~=0.28.1
+fabric>=3.2.2
+requests~=2.31.0
+requests-toolbelt~=1.0.0
+pyautogui~=0.9.54
+pynput~=1.7.6
+pygetwindow>=0.0.9
+psutil~=5.9.6
+tqdm~=4.65.0
+pandas~=2.2.3
+flask~=3.0.0
+pillow~=11.0.0
+opencv-python~=4.8.1.78
+lxml>=6.0.0
+cssselect>=1.3.0
+xmltodict>=0.14.2
+beautifulsoup4>=4.13.4
+backoff>=2.2.1
+func-timeout>=4.3.5
+wrapt-timeout-decorator>=1.5.1
+pyyaml>=6.0.2
+
+# Task-environment helpers used by individual OS-HARM evaluation examples
+openpyxl>=3.1.5
+python-docx>=1.2.0
+python-pptx>=1.0.2
+pypdf>=5.8.0
+pdfplumber>=0.11.7
+pymupdf>=1.26.3
+odfpy>=1.4.1
+formulas>=1.2.10
+chardet>=5.2.0
+rapidfuzz>=3.13.0
+imagehash>=4.3.2
+scikit-image>=0.25.2
+mutagen>=1.47.0
+librosa>=0.11.0
+pyacoustid>=1.3.0
+playwright>=1.54.0

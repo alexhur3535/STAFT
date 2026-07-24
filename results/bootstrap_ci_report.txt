@@ -1,0 +1,38 @@
+Bootstrap CI report (n_boot=10000, conf=95%, strict subset n=10)
+
+B1_random  L0  behavioral n= 50  mean=0.160  CI=[0.060, 0.260]
+B1_random  L0  strict     n= 10  mean=0.300  CI=[0.000, 0.600]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
+B1_random  L1  behavioral n= 50  mean=0.160  CI=[0.060, 0.260]
+B1_random  L1  strict     n= 10  mean=0.300  CI=[0.000, 0.600]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
+B1_random  L2  behavioral n= 50  mean=0.160  CI=[0.060, 0.260]
+B1_random  L2  strict     n= 10  mean=0.300  CI=[0.000, 0.600]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
+B2_keyword L0  behavioral n= 50  mean=0.620  CI=[0.480, 0.760]
+B2_keyword L0  strict     n= 10  mean=0.400  CI=[0.100, 0.700]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
+B2_keyword L1  behavioral n= 50  mean=0.620  CI=[0.480, 0.760]
+B2_keyword L1  strict     n= 10  mean=0.400  CI=[0.100, 0.700]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
+B2_keyword L2  behavioral n= 50  mean=0.500  CI=[0.360, 0.640]
+B2_keyword L2  strict     n= 10  mean=0.200  CI=[0.000, 0.500]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
+LOO_LLM    L0  behavioral n= 50  mean=0.620  CI=[0.480, 0.760]
+LOO_LLM    L0  strict     n= 10  mean=0.300  CI=[0.000, 0.600]
+           -> STRICT < BEHAVIORAL — strict-subset paradox supported
+
+LOO_LLM    L1  behavioral n= 50  mean=0.620  CI=[0.480, 0.760]
+LOO_LLM    L1  strict     n= 10  mean=0.300  CI=[0.000, 0.600]
+           -> STRICT < BEHAVIORAL — strict-subset paradox supported
+
+LOO_LLM    L2  behavioral n= 50  mean=0.520  CI=[0.380, 0.660]
+LOO_LLM    L2  strict     n= 10  mean=0.300  CI=[0.000, 0.600]
+           -> OVERLAP — gap NOT significant at 95%, hedge §6.4
+
